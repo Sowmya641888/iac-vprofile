@@ -1,6 +1,6 @@
 name: "Vprofile IAC"
 on:
-  push:  
+  push:
     branches:
       - main
       - stage
