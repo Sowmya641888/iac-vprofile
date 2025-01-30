@@ -1,7 +1,8 @@
 name: "Vprofile IAC"
 on:
   push:
-    branche: [stage]
+    branche: 
+      - stage
     paths: 
       - terraform/**  
   pull_request:
@@ -32,8 +33,8 @@ jobs:
 
       - name: setup terraform with specified version on the runner
         uses: hashicorp/setup-terraform@v2
-        # with:
-        #   terraform: 1.6.3
+        with:
+          terraform: 1.6.5
 
       - name: Terraform init
         id: init
@@ -55,11 +56,3 @@ jobs:
       - name: terraform plan status
         if: steps.plan.outcome == 'failure'
         run: exit 1
-        
-                  
-      
-      
-
-      
-
-      
